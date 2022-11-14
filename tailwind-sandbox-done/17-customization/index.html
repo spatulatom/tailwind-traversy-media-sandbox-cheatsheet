@@ -7,6 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        // note there is difference between replacing theme and
+        // extending theme, so screens below are replaced and for example
+        // 2xl which normally works now dose not since its not defined in new 
+      // screens, but colors are extended so all the other colors work 
+      // plus primary and secondary 
+      // note: in extend we can overwrite exsiting properties plus add new ones
         theme: {
           screens: {
             sm: '550px',
@@ -15,6 +21,8 @@
             xl: '1440px',
           },
           fontFamily: {
+            // note that in here we dont write: font-sans, font-serif
+            // even though this is the patten for oter properties 
             sans: ['Graphik', 'sans-serif'],
             serif: ['Merriweather', 'serif'],
           },
@@ -41,6 +49,7 @@
       <h1 class="text-white text-xl md:text-3xl md:text-secondary xl:text-5xl">
         Tailwind is awesome
       </h1>
+      <h2 class="font-serif text-white mt-8 text-2xl">Checking font family</h2>
     </div>
 
     <script>

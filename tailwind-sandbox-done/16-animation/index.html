@@ -11,24 +11,28 @@
           extend: {
             animation: {
               'spin-slow': 'spin 3s linear infinite',
-              wiggle: 'wiggle 1s ease-in-out infinite',
+              // spin keyframe we already have see: https://tailwindcss.com/docs/animation
+              // and it has no time so we can for ex change time and create classs 'spin-slow'
+              'wiggle': 'wigglewiggle 1s ease-in-out infinite',
+              // but in here we are ging to create also a new class 'wiggle' 
+              // and this time also  new keyframe wigglewiggle
             },
             keyframes: {
-              wiggle: {
+              wigglewiggle: {
                 '0%, 100%': { transform: 'rotate(-12deg)' },
                 '50%': { transform: 'rotate(12deg)' },
               },
             },
           },
         },
-      }
+      };
     </script>
     <title>Animation</title>
   </head>
   <body>
     <div class="flex items-center justify-center min-h-screen bg-slate-900">
       <svg
-        class="animate-wiggle w-48 text-white"
+        class="hover:animate-wiggle w-48 text-white"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
